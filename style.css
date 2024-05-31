@@ -1,0 +1,651 @@
+/*
+Theme Name: CustomTheme
+Theme URI: https://wordpress.org/themes/CustomTheme/
+Author: the Rost team
+Author URI: http://rost.com.ua/
+Description: CustomTheme brings your site to life with immersive featured images and subtle animations. Our default theme works great in many languages, for any abilities, and on any device.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: CustomTheme
+Tags: custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@font-face {
+  font-family: "TT Hoves Light";
+  src: url("assets/fonts/TTHoves-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("assets/fonts/TTHoves-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TT Hoves";
+  src: url("assets/fonts/TTHoves-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gothic A1";
+  src: url("assets/fonts/GothicA1-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "TT Hoves";
+}
+
+.container {
+  position: relative;
+  display: flex;
+  max-width: 1210px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.image-fluid {
+  width: 100%;
+  height: 100%;
+}
+
+.info-title {
+  font-family: "TT Hoves Light";
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 64px;
+  color: #BDBDBD;
+  margin-bottom: 35px;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 222px;
+  width: 100%;
+  background: white;
+}
+.button p {
+  font-family: TT Hoves;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 30px 0;
+}
+.button p::after {
+  content: url("assets/img/arrow.svg");
+  transform: rotate(180deg);
+  margin-left: 12px;
+  display: inline-block;
+}
+
+.header {
+  padding: 30px 0;
+}
+.header__logo {
+  margin-right: 300px;
+}
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header__nav-item {
+  margin: 0 30px;
+}
+.header__nav-item a {
+  position: relative;
+  padding: 5px 0;
+  font-family: "TT Hoves Light";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #333;
+}
+.header__nav-item a::after, .header__nav-item a::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #333;
+  left: 50%;
+  position: absolute;
+  width: 0;
+  transition: all 0.3s ease;
+}
+.header__nav-item a::after {
+  bottom: 0;
+}
+.header__nav-item a::before {
+  top: 0;
+}
+.header__nav-item a:hover::after, .header__nav-item a:hover::before {
+  width: 100%;
+  left: 0;
+}
+.header__nav-item a.active::after, .header__nav-item a.active::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #333;
+  width: 100%;
+  position: static;
+}
+.header__nav-item a.active::after {
+  margin-top: 3px;
+}
+.header__nav-item a.active::before {
+  margin-bottom: 3px;
+}
+.header__icon {
+  display: none;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 0px 22px -12px rgba(0, 0, 0, 0.75);
+}
+.header__icon span {
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  top: 50%;
+  width: 34%;
+}
+.header__icon::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  top: 20%;
+  width: 54%;
+}
+.header__icon::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  bottom: 20%;
+  width: 75%;
+}
+
+@media (max-width: 1130px) {
+  .header .container {
+    justify-content: space-between;
+  }
+  .header__logo {
+    margin-right: 0;
+  }
+}
+@media (max-width: 860px) {
+  .header__icon {
+    display: block;
+  }
+  .header__panel {
+    display: none;
+    position: absolute;
+    right: 50%;
+    top: 100%;
+    transform: translate(50%, 0);
+    width: 100%;
+    background: #f3f3f3;
+    margin: 10px 0;
+    z-index: 10;
+  }
+  .header__nav {
+    flex-direction: column;
+  }
+  .header__nav-item {
+    margin: 20px 30px;
+  }
+}
+.template .container {
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+.template__slider-title {
+  margin: 336px 0 90px;
+  color: #BDBDBD;
+  font-family: "TT Hoves Light";
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+.template__slider-title span {
+  color: #333;
+  display: block;
+  font-family: TT Hoves;
+  font-weight: 700;
+}
+.template__slider-arrows {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 90px;
+}
+.template__slider-arrows .arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 53px;
+  height: 53px;
+  border: 1px solid #F2F2F2;
+  margin-right: 23px;
+}
+.template__slider-arrows .arrow.next {
+  transform: rotate(180deg);
+}
+.template__slider-arrows .arrow.allow {
+  background: #FBFBFB;
+}
+.template__slider-counter {
+  display: flex;
+  justify-content: space-between;
+  max-width: 142px;
+  width: 100%;
+  margin-bottom: 77px;
+}
+.template__slider-counter h2 {
+  font-family: "TT Hoves";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #BDBDBD;
+}
+.template__slider-counter img {
+  display: block;
+}
+.template__image {
+  position: relative;
+}
+.template__image .button {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media (max-width: 1130px) {
+  .template {
+    position: relative;
+  }
+  .template .container {
+    flex-direction: column;
+  }
+  .template__slider-title {
+    margin: 80px 0 35px;
+    font-size: 45px;
+  }
+  .template__slider-title span {
+    display: inline-block;
+  }
+  .template__slider-arrows {
+    margin-bottom: 40px;
+  }
+  .template__slider-counter {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 860px) {
+  .template__slider-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    transform: translate(0, 100px);
+  }
+}
+.about {
+  max-width: 1170px;
+  height: 435px;
+  margin: 0 auto 150px;
+  background: #FBFBFB;
+}
+.about__image {
+  margin: 30px 30px 0 100px;
+  display: flex;
+}
+.about__image-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 0 0;
+}
+.about__image-item .image-3 {
+  margin-bottom: 30px;
+}
+.about__image .image-1 {
+  margin-top: 30px;
+  width: 270px;
+  height: 345px;
+}
+.about__info {
+  margin: 30px 0;
+}
+.about__info-title {
+  margin-bottom: 20px;
+}
+.about__info-text {
+  color: #000;
+  font-family: "TT Hoves Light";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  margin: 0 30px 20px 0;
+}
+
+@media (max-width: 1130px) {
+  .about {
+    height: auto;
+  }
+  .about__image {
+    margin: 30px 30px 20px 0px;
+  }
+  .about__image .image-1 {
+    margin-top: 0;
+    height: auto;
+  }
+  .about__info-title {
+    font-family: "TT Hoves";
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .about__info-text {
+    margin: 0 0 20px 0;
+  }
+}
+@media (max-width: 930px) {
+  .about .container {
+    flex-direction: column-reverse;
+    overflow: hidden;
+  }
+  .about__image {
+    margin: 30px 0px 20px 0;
+    align-self: center;
+    flex-direction: row-reverse;
+  }
+  .about__image-item {
+    margin: 0 0 0 30px;
+  }
+}
+.tasks .container {
+  flex-direction: column;
+  margin-bottom: 120px;
+}
+.tasks-title {
+  margin-bottom: 60px;
+}
+.tasks__container {
+  display: flex;
+  justify-content: space-between;
+}
+.tasks__container-info {
+  font-family: "TT Hoves";
+  font-size: 22px;
+  line-height: 36px;
+  display: flex;
+}
+.tasks__container-info:nth-child(1)::before {
+  content: url("assets/img/number_1.svg");
+  margin-right: 30px;
+}
+.tasks__container-info:nth-child(2)::before {
+  content: url("assets/img/number_2.svg");
+  margin-right: 30px;
+}
+.tasks__container-info:nth-child(odd) {
+  max-width: 415px;
+}
+.tasks__container-info:nth-child(even) {
+  max-width: 570px;
+}
+
+@media (max-width: 1020px) {
+  .tasks .container {
+    margin-bottom: 90px;
+  }
+  .tasks__container {
+    flex-direction: column;
+  }
+  .tasks__container-info {
+    margin-bottom: 15px;
+    max-width: 100% !important;
+  }
+  .tasks__container-info::before {
+    align-self: center;
+  }
+  .tasks__container-info:nth-child(1)::before {
+    margin-right: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .tasks .info-title {
+    font-family: "TT Hoves";
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tasks__container-info {
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .tasks__container-info:nth-child(odd)::before {
+    margin: 0;
+  }
+  .tasks__container-info:nth-child(even)::before {
+    margin: 0;
+  }
+}
+.portfolio .info-title {
+  margin-bottom: 60px;
+}
+.portfolio .container {
+  flex-direction: column;
+  margin-bottom: 120px;
+}
+.portfolio__box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.portfolio-main {
+  box-shadow: inset 10px 600px 5px 0px rgba(51, 51, 51, 0.8);
+  position: relative;
+  max-width: 570px;
+}
+.portfolio-main img {
+  position: absolute;
+  top: 0;
+  z-index: -5;
+}
+.portfolio__title {
+  color: #FFF;
+  font-family: "TT Hoves";
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px;
+  padding: 48px 79px 14px;
+}
+.portfolio__link {
+  color: #FFF;
+  font-family: Gothic A1;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 0 12px 53px 79px;
+}
+.portfolio__link::after {
+  content: url("assets/img/arrow-white.svg");
+  display: inline-block;
+  transform: rotate(180deg);
+  margin-left: 12px;
+}
+.portfolio-button {
+  background: #333;
+  align-self: flex-end;
+}
+.portfolio-button p {
+  color: #FFF;
+}
+.portfolio-button p::after {
+  content: url("assets/img/arrow-white.svg") !important;
+}
+
+@media (max-width: 1000px) {
+  .portfolio__box:nth-child(2) {
+    flex-direction: column;
+  }
+  .portfolio-main {
+    max-width: 100%;
+  }
+  .portfolio__title {
+    padding: 110px 79px 14px;
+  }
+  .portfolio__link {
+    padding: 0 12px 110px 79px;
+  }
+  .portfolio-button {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .portfolio .info-title {
+    font-family: "TT Hoves";
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .portfolio__box {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .portfolio__title {
+    padding: 50px 20px 14px;
+    font-size: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+  .portfolio__link {
+    padding: 0 12px 50px 22px;
+  }
+  .portfolio .button p {
+    padding: 20px 0;
+  }
+}
+.contact {
+  margin-bottom: 120px;
+}
+.contact .container {
+  display: block;
+}
+.contact__container {
+  display: flex;
+  margin-bottom: 22px;
+}
+.contact__inputs {
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  max-width: 391px;
+  width: 100%;
+}
+.contact__inputs-item {
+  margin-bottom: 22px;
+  border: none;
+  background: #F3F3F3;
+  padding: 18px 22px;
+  font-family: "TT Hoves Light";
+  color: #8D8D8D;
+}
+.contact__inputs .textarea_item {
+  height: 147px;
+  resize: none;
+  margin-bottom: 0;
+}
+.contact__check {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 22px;
+}
+.contact__check p {
+  max-width: 331px;
+  width: 100%;
+}
+.contact__check .custom-checkbox {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #F3F3F3;
+  vertical-align: sub;
+  position: relative;
+  margin-right: 11px;
+}
+.contact__check .custom-checkbox::before {
+  content: "";
+  display: inline-block;
+  background-image: url("assets/img/check.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%) scale(0);
+  transition: 0.2s ease-in;
+}
+.contact__check .real-checkbox {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+.contact__check .real-checkbox:checked + .custom-checkbox::before {
+  transform: translate(-50%, 50%) scale(1);
+}
+.contact .button {
+  background-color: #333;
+}
+.contact .button p {
+  color: #FFF;
+}
+.contact .button p::after {
+  content: url(assets/img/arrow-white.svg) !important;
+  transform: rotate(180deg);
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#188de7">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>Test-appartment</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="style.min.css" />
+
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="index.html">
+                <img src="assets/img/logo.svg" class="image-fluid" alt="logo">
+            </a>
+            </div>
+
+            <div class="header__icon">
+                <span></span>
+            </div>
+            <nav class="header__panel">
+                <ul class="header__nav">
+                    <li class="header__nav-item">
+                        <a href="" class="active">ГЛАВНАЯ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="">ГАЛЕРЕЯ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="">ПРОЕКТЫ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="">СЕРТИФИКАТЫ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="wrapper home">
+        <section class="template">
+            <div class="container">
+                <div class="template__slider">
+                    <h1 class="template__slider-title">project <span>home</span></h1>
+                    <div class="template__slider-element">
+                        <div class="template__slider-arrows">
+                            <div class="arrow">
+                                <img src="assets/img/arrow.svg" alt="arrow">
+                            </div>
+                            <div class="arrow next allow">
+                                <img src="assets/img/arrow.svg" alt="arrow">
+                            </div>
+                        </div>
+                        <div class="template__slider-counter">
+                            <h2>01</h2>
+                            <img src="assets/img/slash.svg" alt="slash">
+                            <h2>02</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="template__image">
+                    <img src="assets/img/template-building.png" alt="building" class="image-fluid">
+                    <div class="button">
+                        <p>взглянуть</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <div class="about__image">
+                    <div class="about__image-item">
+                        <img src="assets/img/about-building-3.png" class="image-3" alt="buildings">
+                        <img src="assets/img/about-building-1.png" alt="buildings">
+                    </div>
+                    <img src="assets/img/about-building-2.png" class="image-fluid image-1" alt="buildings">
+                </div>
+                <div class="about__info">
+                    <h2 class="info-title about__info-title">
+                О компании
+            </h2>
+                    <p class="about__info-text">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    </p>
+                    <div class="button">
+                        <p>читать</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tasks">
+            <div class="container">
+                <h2 class="tasks-title info-title">
+            Основные задачи
+        </h2>
+                <div class="tasks__container">
+                    <p class="tasks__container-info">
+                        Создание комфортных условий и повышение
+                        качества обслуживания клиентов
+                    </p>
+                    <p class="tasks__container-info">
+                        Постоянно совершенствовать качество предоставляемых услуг
+                        путем обучения персонала, закупки нового оборудования и усиленной рекламы на рынке
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="container">
+                <h2 class="info-title">
+            Наши проекты
+        </h2>
+                <div class="portfolio__box">
+                    <div class="portfolio-item portfolio-main">
+                        <img src="assets/img/portfolio-image-1.png" alt="portfolio-image" class="image-fluid">
+                        <h2 class="portfolio__title">ДОСУГОВЫЙ ЦЕНТР</h2>
+                        <h3 class="portfolio__link">ПОДРОБНЕЕ</h3>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio-image-2.png" alt="portfolio-image" class="image-fluid">
+                    </div>
+                </div>
+                <div class="portfolio__box">
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio-image-3.png" alt="portfolio-image" class="image-fluid">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio-image-4.png" alt="portfolio-image" class="image-fluid">
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/img/portfolio-image-5.png" alt="portfolio-image" class="image-fluid">
+                    </div>
+                </div>
+                <div class="button portfolio-button">
+                    <p>ВСЕ ПРОЕКТЫ</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <h2 class="info-title">
+            Связаться с нами
+        </h2>
+                <div class="contact__container">
+                    <div class="contact__inputs">
+                        <input type="text" class="contact__inputs-item" id="name" placeholder="Имя">
+                        <input type="number" class="contact__inputs-item" id="num" placeholder="Номер телефона*">
+                        <input type="email" class="contact__inputs-item" id="e-mail" placeholder="E-mail*">
+                        <input type="text" class="contact__inputs-item" id="goods-services" placeholder="Интересующий товар/услуга">
+                        <textarea name="message" id="message" class="contact__inputs-item textarea_item">Сообщение*</textarea>
+                    </div>
+                    <div class="contact__image">
+                        <img src="assets/img/contact-img.png" alt="img" class="image-fluid">
+                    </div>
+                </div>
+                <label for="agreement" class="contact__check">
+                    <input type="checkbox" name="agreement" id="agreement" class="real-checkbox">
+                    <span class="custom-checkbox"></span>
+                    <p>Отправляя заявку Вы соглашаетесь с политикой конфиденциальности</p>
+                </label>
+                <div class="button">
+                    <p>ОТПРАВИТЬ</p>
+                </div>
+
+            </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
